@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Escrever post</h1>
+
+    <form action="{{ url_for('post') }}" method="post" class="form">
+        <label for="body">O que você está pensando?</label>
+        <textarea id="body" name="body" rows="4" maxlength="280" required></textarea>
+
+        <button type="submit" class="btn">Publicar</button>
+    </form>
+{% endblock %}

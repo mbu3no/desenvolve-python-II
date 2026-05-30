@@ -1,0 +1,177 @@
+/* ---- Parte 5: estilização (aparência, usabilidade, acessibilidade) ---- */
+
+:root {
+    --azul: #1d4ed8;
+    --azul-escuro: #1e3a8a;
+    --texto: #1f2933;
+    --cinza: #6b7280;
+    --fundo: #f5f7fa;
+    --branco: #ffffff;
+    --borda: #d8dee9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    color: var(--texto);            /* contraste alto sobre fundo claro */
+    background: var(--fundo);
+    line-height: 1.5;
+}
+
+/* ---- Barra de navegação ---- */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background: var(--azul-escuro);
+    padding: 0.75rem 1.5rem;
+}
+
+.navbar .brand {
+    color: var(--branco);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+    text-decoration: underline;
+}
+
+/* ---- Conteúdo ---- */
+.container {
+    max-width: 720px;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+}
+
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.25rem; color: var(--cinza); }
+
+/* ---- Mensagens flash ---- */
+.flash {
+    list-style: none;
+    margin: 0 0 1rem;
+    padding: 0.75rem 1rem;
+    background: #fef3c7;
+    border: 1px solid #f59e0b;
+    border-radius: 8px;
+}
+
+/* ---- Perfil ---- */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--borda);
+}
+
+.bio {
+    margin: 0.25rem 0 0;
+    color: var(--cinza);
+}
+
+/* ---- Formulários ---- */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    background: var(--branco);
+    padding: 1.25rem;
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    max-width: 420px;
+}
+
+.form label {
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.form input,
+.form textarea {
+    padding: 0.55rem;
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.form input:focus,
+.form textarea:focus {
+    outline: 2px solid var(--azul);
+    border-color: var(--azul);
+}
+
+/* ---- Botões ---- */
+.btn {
+    display: inline-block;
+    margin-top: 0.75rem;
+    padding: 0.55rem 1.1rem;
+    background: var(--azul);
+    color: var(--branco);
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+    background: var(--azul-escuro);
+}
+
+/* ---- Timeline / posts ---- */
+.timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.post {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.post-body {
+    margin: 0 0 0.5rem;
+}
+
+.post-meta {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--cinza);
+}
