@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module personalizador._comum</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="personalizador.html" class="white">personalizador</a>._comum</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cmatheus.bueno%5Cdownloads%5Cmodulo01%5Caula1.5%5Cpersonalizador%5C_comum.py">c:\users\matheus.bueno\downloads\modulo01\aula1.5\personalizador\_comum.py</a></td></tr></table>
+    <p><span class="code">Funções&nbsp;utilitárias&nbsp;internas&nbsp;compartilhadas&nbsp;pelos&nbsp;módulos&nbsp;do&nbsp;pacote.<br>
+&nbsp;<br>
+Este&nbsp;módulo&nbsp;não&nbsp;faz&nbsp;parte&nbsp;da&nbsp;interface&nbsp;pública;&nbsp;ele&nbsp;apenas&nbsp;evita&nbsp;a<br>
+duplicação&nbsp;da&nbsp;lógica&nbsp;de&nbsp;"obter&nbsp;o&nbsp;texto&nbsp;a&nbsp;ser&nbsp;exibido"&nbsp;em&nbsp;cada&nbsp;módulo.</span></p>
+<p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-obter_texto"><strong>obter_texto</strong></a>(texto: str, isArquivo: bool = False) -&gt; str</dt><dd><span class="code">Retorna&nbsp;o&nbsp;conteúdo&nbsp;a&nbsp;ser&nbsp;exibido&nbsp;pelas&nbsp;funções&nbsp;do&nbsp;pacote.<br>
+&nbsp;<br>
+:param&nbsp;texto:&nbsp;A&nbsp;string&nbsp;a&nbsp;imprimir&nbsp;ou&nbsp;o&nbsp;caminho&nbsp;de&nbsp;um&nbsp;arquivo&nbsp;de&nbsp;texto.<br>
+:param&nbsp;isArquivo:&nbsp;Quando&nbsp;``True``,&nbsp;``texto``&nbsp;é&nbsp;tratado&nbsp;como&nbsp;o&nbsp;caminho&nbsp;de<br>
+&nbsp;&nbsp;&nbsp;&nbsp;um&nbsp;arquivo&nbsp;e&nbsp;o&nbsp;conteúdo&nbsp;desse&nbsp;arquivo&nbsp;é&nbsp;lido&nbsp;e&nbsp;retornado.&nbsp;Quando<br>
+&nbsp;&nbsp;&nbsp;&nbsp;``False``&nbsp;(padrão),&nbsp;a&nbsp;própria&nbsp;string&nbsp;``texto``&nbsp;é&nbsp;retornada.<br>
+:returns:&nbsp;O&nbsp;texto&nbsp;pronto&nbsp;para&nbsp;ser&nbsp;formatado&nbsp;e&nbsp;impresso.<br>
+:raises&nbsp;FileNotFoundError:&nbsp;Se&nbsp;``isArquivo``&nbsp;for&nbsp;``True``&nbsp;e&nbsp;o&nbsp;arquivo&nbsp;não<br>
+&nbsp;&nbsp;&nbsp;&nbsp;existir.</span></dd></dl>
+</td></tr></table>
+</body></html>

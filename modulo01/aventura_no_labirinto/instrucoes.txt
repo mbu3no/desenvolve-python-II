@@ -1,0 +1,19 @@
+Bem-vindo(a) à Aventura no Labirinto!
+
+OBJETIVO
+  Conduza o seu personagem [@] da entrada até a saída [⚑] do labirinto.
+
+CONTROLES
+  Setas do teclado  ou  W (cima), A (esquerda), S (baixo), D (direita)
+  ESC               sair da partida a qualquer momento
+
+PONTUAÇÃO
+  Cada item [●] coletado vale 10 pontos.
+  Pegue o maior número de itens possível no caminho até a saída!
+
+DICA
+  Nos níveis mais difíceis o labirinto é maior. Se quiser, use a opção
+  "Assistir a solução automática" no menu para ver o caminho ser resolvido
+  pela busca recursiva.
+
+Boa sorte, aventureiro(a)!

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module main</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">main</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cmatheus.bueno%5Cdownloads%5Cmodulo01%5Caventura_no_labirinto%5Cmain.py">c:\users\matheus.bueno\downloads\modulo01\aventura_no_labirinto\main.py</a></td></tr></table>
+    <p><span class="code">Aventura&nbsp;no&nbsp;Labirinto&nbsp;—&nbsp;controle&nbsp;principal&nbsp;e&nbsp;interface&nbsp;de&nbsp;linha&nbsp;de&nbsp;comando.<br>
+&nbsp;<br>
+Este&nbsp;arquivo&nbsp;amarra&nbsp;os&nbsp;três&nbsp;módulos&nbsp;do&nbsp;pacote&nbsp;:mod:`aventura_pkg`:<br>
+gera&nbsp;o&nbsp;labirinto,&nbsp;controla&nbsp;o&nbsp;menu&nbsp;(com&nbsp;``match``/``case``),&nbsp;executa&nbsp;o&nbsp;laço<br>
+do&nbsp;jogo&nbsp;lendo&nbsp;o&nbsp;teclado&nbsp;(pynput)&nbsp;e&nbsp;mostra&nbsp;as&nbsp;telas&nbsp;finais&nbsp;(rich).<br>
+&nbsp;<br>
+Uso&nbsp;típico&nbsp;(com&nbsp;o&nbsp;ambiente&nbsp;virtual&nbsp;ativado)::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;python&nbsp;main.py&nbsp;--name&nbsp;Ana<br>
+&nbsp;&nbsp;&nbsp;&nbsp;python&nbsp;main.py&nbsp;--name&nbsp;Bia&nbsp;--color&nbsp;magenta&nbsp;--dificuldade&nbsp;3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;python&nbsp;main.py&nbsp;--name&nbsp;Léo&nbsp;--disable-sound&nbsp;--max-movimentos&nbsp;80<br>
+&nbsp;<br>
+Veja&nbsp;todas&nbsp;as&nbsp;opções&nbsp;com&nbsp;``python&nbsp;main.py&nbsp;--help``.</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="argparse.html">argparse</a><br>
+<a href="aventura_pkg.jogador.html">aventura_pkg.jogador</a><br>
+</td><td class="multicolumn"><a href="aventura_pkg.labirinto.html">aventura_pkg.labirinto</a><br>
+<a href="sys.html">sys</a><br>
+</td><td class="multicolumn"><a href="time.html">time</a><br>
+<a href="aventura_pkg.utils.html">aventura_pkg.utils</a><br>
+</td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-assistir_solucao"><strong>assistir_solucao</strong></a>(args) -&gt; None</dt><dd><span class="code">Resolve&nbsp;o&nbsp;labirinto&nbsp;pela&nbsp;busca&nbsp;recursiva&nbsp;e&nbsp;anima&nbsp;a&nbsp;solução&nbsp;na&nbsp;tela.<br>
+&nbsp;<br>
+:param&nbsp;args:&nbsp;Os&nbsp;argumentos&nbsp;já&nbsp;analisados&nbsp;da&nbsp;linha&nbsp;de&nbsp;comando.</span></dd></dl>
+ <dl><dt><a name="-criar_parser"><strong>criar_parser</strong></a>() -&gt; argparse.ArgumentParser</dt><dd><span class="code">Cria&nbsp;o&nbsp;parser&nbsp;da&nbsp;linha&nbsp;de&nbsp;comando&nbsp;com&nbsp;todas&nbsp;as&nbsp;opções&nbsp;do&nbsp;jogo.<br>
+&nbsp;<br>
+Define&nbsp;cinco&nbsp;elementos,&nbsp;sendo&nbsp;``--name``&nbsp;obrigatório.<br>
+&nbsp;<br>
+:returns:&nbsp;O&nbsp;``argparse.ArgumentParser``&nbsp;configurado.</span></dd></dl>
+ <dl><dt><a name="-desenhar_jogo"><strong>desenhar_jogo</strong></a>(labirinto: dict, jogador: dict, cor: str) -&gt; None</dt><dd><span class="code">Limpa&nbsp;a&nbsp;tela&nbsp;e&nbsp;redesenha&nbsp;o&nbsp;labirinto&nbsp;com&nbsp;a&nbsp;barra&nbsp;de&nbsp;status.<br>
+&nbsp;<br>
+:param&nbsp;labirinto:&nbsp;O&nbsp;labirinto&nbsp;atual.<br>
+:param&nbsp;jogador:&nbsp;O&nbsp;estado&nbsp;do&nbsp;jogador.<br>
+:param&nbsp;cor:&nbsp;Cor&nbsp;principal&nbsp;do&nbsp;jogo.</span></dd></dl>
+ <dl><dt><a name="-jogar_partida"><strong>jogar_partida</strong></a>(args) -&gt; None</dt><dd><span class="code">Cria&nbsp;um&nbsp;labirinto,&nbsp;executa&nbsp;a&nbsp;partida&nbsp;e&nbsp;mostra&nbsp;a&nbsp;tela&nbsp;final.<br>
+&nbsp;<br>
+:param&nbsp;args:&nbsp;Os&nbsp;argumentos&nbsp;já&nbsp;analisados&nbsp;da&nbsp;linha&nbsp;de&nbsp;comando.</span></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>() -&gt; None</dt><dd><span class="code">Ponto&nbsp;de&nbsp;entrada:&nbsp;lê&nbsp;a&nbsp;CLI,&nbsp;toca&nbsp;o&nbsp;som&nbsp;de&nbsp;abertura&nbsp;e&nbsp;abre&nbsp;o&nbsp;menu.</span></dd></dl>
+ <dl><dt><a name="-menu_principal"><strong>menu_principal</strong></a>(args) -&gt; None</dt><dd><span class="code">Mostra&nbsp;o&nbsp;menu&nbsp;repetidamente&nbsp;e&nbsp;despacha&nbsp;a&nbsp;opção&nbsp;escolhida&nbsp;(match-case).<br>
+&nbsp;<br>
+:param&nbsp;args:&nbsp;Os&nbsp;argumentos&nbsp;já&nbsp;analisados&nbsp;da&nbsp;linha&nbsp;de&nbsp;comando.</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>ARQUIVO_INSTRUCOES</strong> = 'instrucoes.txt'<br>
+<strong>console</strong> = &lt;console width=79 None&gt;</td></tr></table>
+</body></html>

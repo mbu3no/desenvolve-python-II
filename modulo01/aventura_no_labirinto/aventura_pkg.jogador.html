@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module aventura_pkg.jogador</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="aventura_pkg.html" class="white">aventura_pkg</a>.jogador</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cmatheus.bueno%5Cdownloads%5Cmodulo01%5Caventura_no_labirinto%5Caventura_pkg%5Cjogador.py">c:\users\matheus.bueno\downloads\modulo01\aventura_no_labirinto\aventura_pkg\jogador.py</a></td></tr></table>
+    <p><span class="code">Módulo&nbsp;``jogador``:&nbsp;estado,&nbsp;movimentação&nbsp;e&nbsp;pontuação&nbsp;do&nbsp;jogador.<br>
+&nbsp;<br>
+A&nbsp;movimentação&nbsp;usa&nbsp;a&nbsp;biblioteca&nbsp;externa&nbsp;**pynput**&nbsp;para&nbsp;ler&nbsp;o&nbsp;teclado&nbsp;em<br>
+tempo&nbsp;real&nbsp;(setas&nbsp;ou&nbsp;teclas&nbsp;W/A/S/D).&nbsp;A&nbsp;pontuação&nbsp;aumenta&nbsp;ao&nbsp;coletar&nbsp;itens<br>
+espalhados&nbsp;pelo&nbsp;labirinto.<br>
+&nbsp;<br>
+Funções&nbsp;principais:<br>
+&nbsp;<br>
+*&nbsp;:func:`iniciar_jogador`&nbsp;—&nbsp;cria&nbsp;o&nbsp;jogador&nbsp;na&nbsp;posição&nbsp;inicial,&nbsp;zerando&nbsp;pontos.<br>
+*&nbsp;:func:`mover`&nbsp;—&nbsp;aplica&nbsp;um&nbsp;movimento&nbsp;(lógica&nbsp;pura,&nbsp;com&nbsp;``match``/``case``).<br>
+*&nbsp;:func:`pontuar`&nbsp;—&nbsp;coleta&nbsp;o&nbsp;item&nbsp;da&nbsp;célula&nbsp;atual,&nbsp;somando&nbsp;pontos.<br>
+*&nbsp;:func:`jogar`&nbsp;—&nbsp;laço&nbsp;principal&nbsp;que&nbsp;lê&nbsp;o&nbsp;teclado&nbsp;(pynput)&nbsp;até&nbsp;vitória,<br>
+&nbsp;&nbsp;derrota&nbsp;ou&nbsp;saída.</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="pynput.keyboard.html">pynput.keyboard</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-iniciar_jogador"><strong>iniciar_jogador</strong></a>(nome: str, labirinto: dict) -&gt; dict</dt><dd><span class="code">Cria&nbsp;o&nbsp;dicionário&nbsp;de&nbsp;estado&nbsp;do&nbsp;jogador&nbsp;na&nbsp;posição&nbsp;inicial.<br>
+&nbsp;<br>
+:param&nbsp;nome:&nbsp;Nome&nbsp;do(a)&nbsp;jogador(a),&nbsp;usado&nbsp;nas&nbsp;mensagens&nbsp;da&nbsp;tela.<br>
+:param&nbsp;labirinto:&nbsp;O&nbsp;labirinto&nbsp;onde&nbsp;o&nbsp;jogador&nbsp;será&nbsp;posicionado.<br>
+:returns:&nbsp;Dicionário&nbsp;``{"nome",&nbsp;"pos",&nbsp;"pontos",&nbsp;"movimentos",&nbsp;"itens"}``.</span></dd></dl>
+ <dl><dt><a name="-jogar"><strong>jogar</strong></a>(
+    labirinto: dict,
+    jogador: dict,
+    desenhar,
+    max_movimentos: int | None = None
+) -&gt; str</dt><dd><span class="code">Executa&nbsp;o&nbsp;laço&nbsp;principal&nbsp;do&nbsp;jogo&nbsp;lendo&nbsp;o&nbsp;teclado&nbsp;com&nbsp;pynput.<br>
+&nbsp;<br>
+A&nbsp;cada&nbsp;tecla&nbsp;de&nbsp;movimento&nbsp;válida&nbsp;o&nbsp;jogador&nbsp;anda,&nbsp;pontua&nbsp;e&nbsp;a&nbsp;tela&nbsp;é<br>
+redesenhada.&nbsp;O&nbsp;laço&nbsp;termina&nbsp;ao&nbsp;alcançar&nbsp;a&nbsp;saída&nbsp;(vitória),&nbsp;ao&nbsp;esgotar&nbsp;o<br>
+limite&nbsp;de&nbsp;movimentos&nbsp;(derrota)&nbsp;ou&nbsp;ao&nbsp;pressionar&nbsp;ESC&nbsp;(saída).<br>
+&nbsp;<br>
+:param&nbsp;labirinto:&nbsp;O&nbsp;labirinto&nbsp;sendo&nbsp;jogado.<br>
+:param&nbsp;jogador:&nbsp;O&nbsp;estado&nbsp;do&nbsp;jogador.<br>
+:param&nbsp;desenhar:&nbsp;Função&nbsp;sem&nbsp;argumentos&nbsp;que&nbsp;redesenha&nbsp;a&nbsp;tela&nbsp;do&nbsp;jogo.<br>
+:param&nbsp;max_movimentos:&nbsp;Limite&nbsp;opcional&nbsp;de&nbsp;movimentos&nbsp;antes&nbsp;da&nbsp;derrota.<br>
+:returns:&nbsp;``"vitoria"``,&nbsp;``"derrota"``&nbsp;ou&nbsp;``"saiu"``.</span></dd></dl>
+ <dl><dt><a name="-mover"><strong>mover</strong></a>(jogador: dict, labirinto: dict, direcao: str) -&gt; bool</dt><dd><span class="code">Move&nbsp;o&nbsp;jogador&nbsp;em&nbsp;uma&nbsp;direção,&nbsp;se&nbsp;não&nbsp;houver&nbsp;parede&nbsp;no&nbsp;caminho.<br>
+&nbsp;<br>
+O&nbsp;deslocamento&nbsp;correspondente&nbsp;a&nbsp;cada&nbsp;direção&nbsp;é&nbsp;obtido&nbsp;com&nbsp;um<br>
+``match``/``case``.<br>
+&nbsp;<br>
+:param&nbsp;jogador:&nbsp;Estado&nbsp;do&nbsp;jogador&nbsp;(alterado&nbsp;no&nbsp;local).<br>
+:param&nbsp;labirinto:&nbsp;O&nbsp;labirinto&nbsp;atual.<br>
+:param&nbsp;direcao:&nbsp;``"cima"``,&nbsp;``"baixo"``,&nbsp;``"esquerda"``&nbsp;ou&nbsp;``"direita"``.<br>
+:returns:&nbsp;``True``&nbsp;se&nbsp;o&nbsp;jogador&nbsp;se&nbsp;moveu;&nbsp;``False``&nbsp;se&nbsp;bateu&nbsp;numa&nbsp;parede<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ou&nbsp;a&nbsp;direção&nbsp;é&nbsp;inválida.</span></dd></dl>
+ <dl><dt><a name="-pontuar"><strong>pontuar</strong></a>(jogador: dict, labirinto: dict) -&gt; int</dt><dd><span class="code">Coleta&nbsp;o&nbsp;item&nbsp;da&nbsp;posição&nbsp;atual&nbsp;do&nbsp;jogador,&nbsp;se&nbsp;houver,&nbsp;somando&nbsp;pontos.<br>
+&nbsp;<br>
+:param&nbsp;jogador:&nbsp;Estado&nbsp;do&nbsp;jogador&nbsp;(alterado&nbsp;no&nbsp;local).<br>
+:param&nbsp;labirinto:&nbsp;O&nbsp;labirinto&nbsp;atual&nbsp;(o&nbsp;item&nbsp;coletado&nbsp;é&nbsp;removido&nbsp;dele).<br>
+:returns:&nbsp;A&nbsp;quantidade&nbsp;de&nbsp;pontos&nbsp;ganhos&nbsp;nesta&nbsp;jogada&nbsp;(0&nbsp;se&nbsp;não&nbsp;havia&nbsp;item).</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>MOVIMENTOS</strong> = {'baixo': (1, 0), 'cima': (-1, 0), 'direita': (0, 1), 'esquerda': (0, -1)}<br>
+<strong>PAREDE</strong> = '#'</td></tr></table>
+</body></html>

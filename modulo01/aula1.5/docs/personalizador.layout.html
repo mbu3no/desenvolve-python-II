@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module personalizador.layout</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="personalizador.html" class="white">personalizador</a>.layout</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cmatheus.bueno%5Cdownloads%5Cmodulo01%5Caula1.5%5Cpersonalizador%5Clayout.py">c:\users\matheus.bueno\downloads\modulo01\aula1.5\personalizador\layout.py</a></td></tr></table>
+    <p><span class="code">Módulo&nbsp;``layout``:&nbsp;exibe&nbsp;texto&nbsp;usando&nbsp;o&nbsp;recurso&nbsp;de&nbsp;layout&nbsp;do&nbsp;``rich``.<br>
+&nbsp;<br>
+O&nbsp;``rich.layout.Layout``&nbsp;permite&nbsp;dividir&nbsp;a&nbsp;tela&nbsp;do&nbsp;terminal&nbsp;em&nbsp;regiões<br>
+independentes.&nbsp;Aqui&nbsp;usamos&nbsp;esse&nbsp;recurso&nbsp;para&nbsp;apresentar&nbsp;o&nbsp;texto&nbsp;fornecido<br>
+distribuído&nbsp;em&nbsp;colunas&nbsp;ou&nbsp;linhas,&nbsp;cada&nbsp;região&nbsp;com&nbsp;sua&nbsp;própria&nbsp;moldura.<br>
+&nbsp;<br>
+Funções&nbsp;disponíveis:<br>
+&nbsp;<br>
+==&nbsp;&nbsp;====================&nbsp;&nbsp;=================================================<br>
+id&nbsp;&nbsp;função&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;descrição<br>
+==&nbsp;&nbsp;====================&nbsp;&nbsp;=================================================<br>
+1&nbsp;&nbsp;&nbsp;colunas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;divide&nbsp;a&nbsp;tela&nbsp;em&nbsp;duas&nbsp;colunas&nbsp;lado&nbsp;a&nbsp;lado<br>
+2&nbsp;&nbsp;&nbsp;linhas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;divide&nbsp;a&nbsp;tela&nbsp;em&nbsp;três&nbsp;linhas&nbsp;(topo/meio/rodapé)<br>
+==&nbsp;&nbsp;====================&nbsp;&nbsp;=================================================</span></p>
+<p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-colunas"><strong>colunas</strong></a>(texto: str, isArquivo: bool = False) -&gt; None</dt><dd><span class="code">Exibe&nbsp;o&nbsp;texto&nbsp;dividido&nbsp;em&nbsp;duas&nbsp;colunas&nbsp;lado&nbsp;a&nbsp;lado.<br>
+&nbsp;<br>
+A&nbsp;primeira&nbsp;coluna&nbsp;mostra&nbsp;o&nbsp;texto&nbsp;e&nbsp;a&nbsp;segunda&nbsp;mostra&nbsp;algumas<br>
+estatísticas&nbsp;simples&nbsp;(quantidade&nbsp;de&nbsp;caracteres&nbsp;e&nbsp;de&nbsp;linhas),&nbsp;cada&nbsp;uma<br>
+dentro&nbsp;de&nbsp;um&nbsp;painel&nbsp;próprio.<br>
+&nbsp;<br>
+:param&nbsp;texto:&nbsp;A&nbsp;string&nbsp;a&nbsp;imprimir&nbsp;ou&nbsp;o&nbsp;caminho&nbsp;de&nbsp;um&nbsp;arquivo&nbsp;de&nbsp;texto.<br>
+:param&nbsp;isArquivo:&nbsp;Quando&nbsp;``True``,&nbsp;``texto``&nbsp;é&nbsp;o&nbsp;caminho&nbsp;de&nbsp;um&nbsp;arquivo.</span></dd></dl>
+ <dl><dt><a name="-linhas"><strong>linhas</strong></a>(texto: str, isArquivo: bool = False) -&gt; None</dt><dd><span class="code">Exibe&nbsp;o&nbsp;texto&nbsp;em&nbsp;três&nbsp;regiões&nbsp;empilhadas:&nbsp;topo,&nbsp;meio&nbsp;e&nbsp;rodapé.<br>
+&nbsp;<br>
+O&nbsp;topo&nbsp;e&nbsp;o&nbsp;rodapé&nbsp;recebem&nbsp;rótulos&nbsp;fixos&nbsp;e&nbsp;o&nbsp;texto&nbsp;fornecido&nbsp;é&nbsp;exibido&nbsp;na<br>
+região&nbsp;central,&nbsp;evidenciando&nbsp;a&nbsp;divisão&nbsp;vertical&nbsp;da&nbsp;tela.<br>
+&nbsp;<br>
+:param&nbsp;texto:&nbsp;A&nbsp;string&nbsp;a&nbsp;imprimir&nbsp;ou&nbsp;o&nbsp;caminho&nbsp;de&nbsp;um&nbsp;arquivo&nbsp;de&nbsp;texto.<br>
+:param&nbsp;isArquivo:&nbsp;Quando&nbsp;``True``,&nbsp;``texto``&nbsp;é&nbsp;o&nbsp;caminho&nbsp;de&nbsp;um&nbsp;arquivo.</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>console</strong> = &lt;console width=79 None&gt;</td></tr></table>
+</body></html>

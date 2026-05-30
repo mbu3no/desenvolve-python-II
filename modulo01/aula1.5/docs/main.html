@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module main</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">main</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cmatheus.bueno%5Cdownloads%5Cmodulo01%5Caula1.5%5Cmain.py">c:\users\matheus.bueno\downloads\modulo01\aula1.5\main.py</a></td></tr></table>
+    <p><span class="code">Interface&nbsp;de&nbsp;linha&nbsp;de&nbsp;comando&nbsp;do&nbsp;pacote&nbsp;``personalizador``.<br>
+&nbsp;<br>
+Permite&nbsp;imprimir&nbsp;um&nbsp;texto&nbsp;(ou&nbsp;o&nbsp;conteúdo&nbsp;de&nbsp;um&nbsp;arquivo)&nbsp;formatado&nbsp;com&nbsp;os<br>
+recursos&nbsp;da&nbsp;biblioteca&nbsp;``rich``,&nbsp;escolhendo&nbsp;o&nbsp;módulo&nbsp;e&nbsp;a&nbsp;função&nbsp;desejados<br>
+por&nbsp;nome&nbsp;ou&nbsp;por&nbsp;id.<br>
+&nbsp;<br>
+Exemplos&nbsp;de&nbsp;uso&nbsp;(com&nbsp;o&nbsp;ambiente&nbsp;virtual&nbsp;ativado)::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;python&nbsp;main.py&nbsp;"Olá,&nbsp;mundo!"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;python&nbsp;main.py&nbsp;"Olá"&nbsp;-m&nbsp;painel&nbsp;-f&nbsp;destacado<br>
+&nbsp;&nbsp;&nbsp;&nbsp;python&nbsp;main.py&nbsp;"Olá"&nbsp;-m&nbsp;4&nbsp;-f&nbsp;2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;python&nbsp;main.py&nbsp;texto.txt&nbsp;-a&nbsp;-m&nbsp;estilo&nbsp;-f&nbsp;arco_iris<br>
+&nbsp;<br>
+Para&nbsp;ver&nbsp;a&nbsp;ajuda&nbsp;completa::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;python&nbsp;main.py&nbsp;-h</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="argparse.html">argparse</a><br>
+<a href="personalizador.estilo.html">personalizador.estilo</a><br>
+</td><td class="multicolumn"><a href="personalizador.layout.html">personalizador.layout</a><br>
+<a href="personalizador.painel.html">personalizador.painel</a><br>
+</td><td class="multicolumn"><a href="personalizador.progresso.html">personalizador.progresso</a><br>
+</td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-criar_parser"><strong>criar_parser</strong></a>() -&gt; argparse.ArgumentParser</dt><dd><span class="code">Cria&nbsp;e&nbsp;configura&nbsp;o&nbsp;``argparse.ArgumentParser``&nbsp;da&nbsp;aplicação.<br>
+&nbsp;<br>
+:returns:&nbsp;O&nbsp;parser&nbsp;com&nbsp;todos&nbsp;os&nbsp;argumentos&nbsp;e&nbsp;opções&nbsp;configurados.</span></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>() -&gt; None</dt><dd><span class="code">Ponto&nbsp;de&nbsp;entrada:&nbsp;lê&nbsp;os&nbsp;argumentos&nbsp;e&nbsp;executa&nbsp;a&nbsp;função&nbsp;escolhida.</span></dd></dl>
+ <dl><dt><a name="-resolver_funcao"><strong>resolver_funcao</strong></a>(nome_modulo: str, escolha: str)</dt><dd><span class="code">Converte&nbsp;o&nbsp;valor&nbsp;de&nbsp;``-f``&nbsp;(nome&nbsp;ou&nbsp;id)&nbsp;na&nbsp;função&nbsp;a&nbsp;ser&nbsp;executada.<br>
+&nbsp;<br>
+:param&nbsp;nome_modulo:&nbsp;O&nbsp;nome&nbsp;canônico&nbsp;do&nbsp;módulo&nbsp;já&nbsp;resolvido.<br>
+:param&nbsp;escolha:&nbsp;O&nbsp;nome&nbsp;da&nbsp;função&nbsp;ou&nbsp;seu&nbsp;id&nbsp;(``"1"``&nbsp;ou&nbsp;``"2"``).<br>
+:returns:&nbsp;A&nbsp;função&nbsp;do&nbsp;módulo&nbsp;correspondente&nbsp;à&nbsp;escolha.<br>
+:raises&nbsp;SystemExit:&nbsp;Se&nbsp;a&nbsp;escolha&nbsp;não&nbsp;corresponder&nbsp;a&nbsp;nenhuma&nbsp;função.</span></dd></dl>
+ <dl><dt><a name="-resolver_modulo"><strong>resolver_modulo</strong></a>(escolha: str) -&gt; str</dt><dd><span class="code">Converte&nbsp;o&nbsp;valor&nbsp;de&nbsp;``-m``&nbsp;(nome&nbsp;ou&nbsp;id)&nbsp;no&nbsp;nome&nbsp;do&nbsp;módulo.<br>
+&nbsp;<br>
+:param&nbsp;escolha:&nbsp;O&nbsp;nome&nbsp;do&nbsp;módulo&nbsp;(ex.:&nbsp;``"painel"``)&nbsp;ou&nbsp;seu&nbsp;id&nbsp;(ex.:&nbsp;``"2"``).<br>
+:returns:&nbsp;O&nbsp;nome&nbsp;canônico&nbsp;do&nbsp;módulo.<br>
+:raises&nbsp;SystemExit:&nbsp;Se&nbsp;a&nbsp;escolha&nbsp;não&nbsp;corresponder&nbsp;a&nbsp;nenhum&nbsp;módulo.</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>MODULOS</strong> = {'estilo': {'funcoes': {'arco_iris': {'func': &lt;function arco_iris&gt;, 'id': '2'}, 'colorido': {'func': &lt;function colorido&gt;, 'id': '1'}}, 'id': '4', 'modulo': &lt;module 'personalizador.estilo' from 'C:\\Users\...s\\modulo01\\aula1.5\\personalizador\\estilo.py'&gt;}, 'layout': {'funcoes': {'colunas': {'func': &lt;function colunas&gt;, 'id': '1'}, 'linhas': {'func': &lt;function linhas&gt;, 'id': '2'}}, 'id': '1', 'modulo': &lt;module 'personalizador.layout' from 'C:\\Users\...s\\modulo01\\aula1.5\\personalizador\\layout.py'&gt;}, 'painel': {'funcoes': {'destacado': {'func': &lt;function destacado&gt;, 'id': '2'}, 'simples': {'func': &lt;function simples&gt;, 'id': '1'}}, 'id': '2', 'modulo': &lt;module 'personalizador.painel' from 'C:\\Users\...s\\modulo01\\aula1.5\\personalizador\\painel.py'&gt;}, 'progresso': {'funcoes': {'barra': {'func': &lt;function barra&gt;, 'id': '1'}, 'girando': {'func': &lt;function girando&gt;, 'id': '2'}}, 'id': '3', 'modulo': &lt;module 'personalizador.progresso' from 'C:\\Use...modulo01\\aula1.5\\personalizador\\progresso.py'&gt;}}</td></tr></table>
+</body></html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module aventura_pkg.labirinto</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="aventura_pkg.html" class="white">aventura_pkg</a>.labirinto</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cmatheus.bueno%5Cdownloads%5Cmodulo01%5Caventura_no_labirinto%5Caventura_pkg%5Clabirinto.py">c:\users\matheus.bueno\downloads\modulo01\aventura_no_labirinto\aventura_pkg\labirinto.py</a></td></tr></table>
+    <p><span class="code">Módulo&nbsp;``labirinto``:&nbsp;criação,&nbsp;exibição&nbsp;e&nbsp;resolução&nbsp;do&nbsp;labirinto.<br>
+&nbsp;<br>
+O&nbsp;labirinto&nbsp;é&nbsp;**gerado&nbsp;aleatoriamente**&nbsp;(nunca&nbsp;lido&nbsp;de&nbsp;uma&nbsp;string&nbsp;fixa&nbsp;no<br>
+código)&nbsp;por&nbsp;um&nbsp;algoritmo&nbsp;de&nbsp;*recursive&nbsp;backtracker*&nbsp;(escavação&nbsp;recursiva).<br>
+Cada&nbsp;labirinto&nbsp;recebe&nbsp;itens&nbsp;colecionáveis&nbsp;espalhados&nbsp;pelos&nbsp;corredores&nbsp;e<br>
+possui&nbsp;uma&nbsp;entrada&nbsp;e&nbsp;uma&nbsp;saída.<br>
+&nbsp;<br>
+Representação&nbsp;interna<br>
+---------------------<br>
+O&nbsp;labirinto&nbsp;é&nbsp;um&nbsp;dicionário::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"grade":&nbsp;&nbsp;list[list[str]],&nbsp;&nbsp;&nbsp;#&nbsp;matriz&nbsp;de&nbsp;caracteres&nbsp;('#'&nbsp;parede,&nbsp;'&nbsp;'&nbsp;livre)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"inicio":&nbsp;(linha,&nbsp;coluna),&nbsp;&nbsp;&nbsp;#&nbsp;posição&nbsp;de&nbsp;entrada<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"saida":&nbsp;&nbsp;(linha,&nbsp;coluna),&nbsp;&nbsp;&nbsp;#&nbsp;posição&nbsp;de&nbsp;saída<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itens":&nbsp;&nbsp;dict[(l,&nbsp;c)&nbsp;-&gt;&nbsp;int]&nbsp;&nbsp;#&nbsp;posição&nbsp;-&gt;&nbsp;pontos&nbsp;do&nbsp;item<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;<br>
+As&nbsp;posições&nbsp;são&nbsp;sempre&nbsp;tuplas&nbsp;``(linha,&nbsp;coluna)``.<br>
+&nbsp;<br>
+Funções&nbsp;principais:<br>
+&nbsp;<br>
+*&nbsp;:func:`criar_labirinto`&nbsp;—&nbsp;gera&nbsp;um&nbsp;novo&nbsp;labirinto&nbsp;aleatório.<br>
+*&nbsp;:func:`imprimir_labirinto`&nbsp;—&nbsp;desenha&nbsp;o&nbsp;labirinto&nbsp;(com&nbsp;o&nbsp;jogador)&nbsp;usando&nbsp;rich.<br>
+*&nbsp;:func:`resolver_labirinto`&nbsp;—&nbsp;**função&nbsp;recursiva**&nbsp;que&nbsp;devolve&nbsp;a&nbsp;lista&nbsp;de<br>
+&nbsp;&nbsp;comandos&nbsp;que&nbsp;leva&nbsp;da&nbsp;entrada&nbsp;à&nbsp;saída.</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="random.html">random</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-criar_labirinto"><strong>criar_labirinto</strong></a>(dificuldade: int = 1, qtd_itens: int = 5) -&gt; dict</dt><dd><span class="code">Gera&nbsp;e&nbsp;devolve&nbsp;um&nbsp;novo&nbsp;labirinto&nbsp;aleatório.<br>
+&nbsp;<br>
+A&nbsp;estrutura&nbsp;é&nbsp;escavada&nbsp;por&nbsp;um&nbsp;algoritmo&nbsp;recursivo&nbsp;(*recursive<br>
+backtracker*):&nbsp;partindo&nbsp;da&nbsp;célula&nbsp;inicial,&nbsp;o&nbsp;algoritmo&nbsp;visita&nbsp;vizinhos<br>
+ainda&nbsp;não&nbsp;visitados&nbsp;em&nbsp;ordem&nbsp;aleatória,&nbsp;derrubando&nbsp;a&nbsp;parede&nbsp;entre&nbsp;eles.<br>
+&nbsp;<br>
+:param&nbsp;dificuldade:&nbsp;Nível&nbsp;``1``&nbsp;(fácil),&nbsp;``2``&nbsp;(médio)&nbsp;ou&nbsp;``3``&nbsp;(difícil);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;define&nbsp;o&nbsp;tamanho&nbsp;do&nbsp;labirinto.<br>
+:param&nbsp;qtd_itens:&nbsp;Quantidade&nbsp;de&nbsp;itens&nbsp;colecionáveis&nbsp;a&nbsp;espalhar.<br>
+:returns:&nbsp;O&nbsp;dicionário&nbsp;que&nbsp;representa&nbsp;o&nbsp;labirinto&nbsp;(ver&nbsp;módulo).<br>
+:raises&nbsp;ValueError:&nbsp;Se&nbsp;``dificuldade``&nbsp;não&nbsp;for&nbsp;1,&nbsp;2&nbsp;ou&nbsp;3.</span></dd></dl>
+ <dl><dt><a name="-imprimir_labirinto"><strong>imprimir_labirinto</strong></a>(labirinto: dict, jogador: dict, cor: str = 'cyan') -&gt; Text</dt><dd><span class="code">Monta&nbsp;o&nbsp;desenho&nbsp;do&nbsp;labirinto&nbsp;(com&nbsp;o&nbsp;jogador&nbsp;e&nbsp;os&nbsp;itens)&nbsp;para&nbsp;o&nbsp;rich.<br>
+&nbsp;<br>
+:param&nbsp;labirinto:&nbsp;O&nbsp;labirinto&nbsp;a&nbsp;desenhar.<br>
+:param&nbsp;jogador:&nbsp;Dicionário&nbsp;do&nbsp;jogador&nbsp;(usa&nbsp;a&nbsp;chave&nbsp;``"pos"``).<br>
+:param&nbsp;cor:&nbsp;Cor&nbsp;principal&nbsp;usada&nbsp;nas&nbsp;paredes.<br>
+:returns:&nbsp;Um&nbsp;objeto&nbsp;``rich.text.Text``&nbsp;pronto&nbsp;para&nbsp;``console.print``.</span></dd></dl>
+ <dl><dt><a name="-resolver_labirinto"><strong>resolver_labirinto</strong></a>(labirinto: dict) -&gt; list</dt><dd><span class="code">Devolve&nbsp;a&nbsp;lista&nbsp;de&nbsp;comandos&nbsp;que&nbsp;resolve&nbsp;o&nbsp;labirinto&nbsp;(entrada&nbsp;→&nbsp;saída).<br>
+&nbsp;<br>
+Implementa&nbsp;uma&nbsp;**busca&nbsp;em&nbsp;profundidade&nbsp;recursiva**.&nbsp;O&nbsp;retorno&nbsp;é&nbsp;a<br>
+sequência&nbsp;de&nbsp;movimentos&nbsp;(ex.:&nbsp;``["baixo",&nbsp;"direita",&nbsp;...]``)&nbsp;que&nbsp;o<br>
+jogador&nbsp;deve&nbsp;executar&nbsp;para&nbsp;chegar&nbsp;à&nbsp;saída.<br>
+&nbsp;<br>
+:param&nbsp;labirinto:&nbsp;O&nbsp;labirinto&nbsp;a&nbsp;resolver.<br>
+:returns:&nbsp;Lista&nbsp;de&nbsp;nomes&nbsp;de&nbsp;movimentos;&nbsp;vazia&nbsp;se&nbsp;não&nbsp;houver&nbsp;solução.</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>DIFICULDADES</strong> = {1: (6, 6), 2: (10, 10), 3: (16, 16)}<br>
+<strong>LIVRE</strong> = ' '<br>
+<strong>MOVIMENTOS</strong> = {'baixo': (1, 0), 'cima': (-1, 0), 'direita': (0, 1), 'esquerda': (0, -1)}<br>
+<strong>PAREDE</strong> = '#'</td></tr></table>
+</body></html>

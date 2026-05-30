@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module aventura_pkg.utils</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="aventura_pkg.html" class="white">aventura_pkg</a>.utils</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cmatheus.bueno%5Cdownloads%5Cmodulo01%5Caventura_no_labirinto%5Caventura_pkg%5Cutils.py">c:\users\matheus.bueno\downloads\modulo01\aventura_no_labirinto\aventura_pkg\utils.py</a></td></tr></table>
+    <p><span class="code">Módulo&nbsp;``utils``:&nbsp;funções&nbsp;utilitárias&nbsp;de&nbsp;apresentação&nbsp;(rich)&nbsp;e&nbsp;som.<br>
+&nbsp;<br>
+Concentra&nbsp;a&nbsp;parte&nbsp;"visual"&nbsp;do&nbsp;jogo&nbsp;para&nbsp;manter&nbsp;o&nbsp;``main.py``&nbsp;enxuto:<br>
+impressão&nbsp;do&nbsp;menu,&nbsp;das&nbsp;instruções&nbsp;(lidas&nbsp;de&nbsp;um&nbsp;arquivo),&nbsp;das&nbsp;telas&nbsp;de<br>
+vitória/derrota&nbsp;e&nbsp;uma&nbsp;animação&nbsp;**recursiva**&nbsp;de&nbsp;comemoração.&nbsp;Também&nbsp;oferece<br>
+um&nbsp;som&nbsp;de&nbsp;abertura&nbsp;opcional&nbsp;(via&nbsp;``winsound``,&nbsp;no&nbsp;Windows).<br>
+&nbsp;<br>
+Funções&nbsp;principais:<br>
+&nbsp;<br>
+*&nbsp;:func:`imprime_instrucoes`&nbsp;—&nbsp;lê&nbsp;um&nbsp;arquivo&nbsp;de&nbsp;texto&nbsp;e&nbsp;o&nbsp;imprime&nbsp;formatado.<br>
+*&nbsp;:func:`imprimir_menu`&nbsp;—&nbsp;desenha&nbsp;o&nbsp;menu&nbsp;principal&nbsp;do&nbsp;jogo.<br>
+*&nbsp;:func:`tela_vitoria`&nbsp;/&nbsp;:func:`tela_derrota`&nbsp;—&nbsp;telas&nbsp;finais.<br>
+*&nbsp;:func:`animacao_vitoria`&nbsp;—&nbsp;animação&nbsp;**recursiva**&nbsp;de&nbsp;comemoração.<br>
+*&nbsp;:func:`tocar_som_abertura`&nbsp;—&nbsp;toca&nbsp;um&nbsp;jingle&nbsp;de&nbsp;abertura&nbsp;(opcional).</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="threading.html">threading</a><br>
+</td><td class="multicolumn"><a href="time.html">time</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-animacao_vitoria"><strong>animacao_vitoria</strong></a>(console: Console, nivel: int = 1, maximo: int = 6) -&gt; None</dt><dd><span class="code">Desenha&nbsp;**recursivamente**&nbsp;uma&nbsp;árvore&nbsp;de&nbsp;estrelas&nbsp;que&nbsp;cresce&nbsp;na&nbsp;tela.<br>
+&nbsp;<br>
+Cada&nbsp;chamada&nbsp;imprime&nbsp;uma&nbsp;linha&nbsp;de&nbsp;estrelas&nbsp;e&nbsp;chama&nbsp;a&nbsp;si&nbsp;mesma&nbsp;para&nbsp;o<br>
+próximo&nbsp;nível,&nbsp;até&nbsp;atingir&nbsp;``maximo``&nbsp;—&nbsp;caracterizando&nbsp;a&nbsp;recursão.<br>
+&nbsp;<br>
+:param&nbsp;console:&nbsp;O&nbsp;console&nbsp;rich&nbsp;usado&nbsp;para&nbsp;imprimir.<br>
+:param&nbsp;nivel:&nbsp;Nível&nbsp;atual&nbsp;da&nbsp;animação&nbsp;(linha&nbsp;sendo&nbsp;desenhada).<br>
+:param&nbsp;maximo:&nbsp;Nível&nbsp;máximo&nbsp;(condição&nbsp;de&nbsp;parada&nbsp;da&nbsp;recursão).</span></dd></dl>
+ <dl><dt><a name="-imprime_instrucoes"><strong>imprime_instrucoes</strong></a>(console: Console, caminho_arquivo: str, cor: str = 'cyan') -&gt; None</dt><dd><span class="code">Lê&nbsp;as&nbsp;instruções&nbsp;de&nbsp;um&nbsp;arquivo&nbsp;de&nbsp;texto&nbsp;e&nbsp;as&nbsp;imprime&nbsp;formatadas.<br>
+&nbsp;<br>
+:param&nbsp;console:&nbsp;O&nbsp;console&nbsp;rich&nbsp;usado&nbsp;para&nbsp;imprimir.<br>
+:param&nbsp;caminho_arquivo:&nbsp;Caminho&nbsp;do&nbsp;arquivo&nbsp;de&nbsp;texto&nbsp;com&nbsp;as&nbsp;instruções.<br>
+:param&nbsp;cor:&nbsp;Cor&nbsp;principal&nbsp;usada&nbsp;na&nbsp;borda&nbsp;do&nbsp;painel.</span></dd></dl>
+ <dl><dt><a name="-imprimir_banner"><strong>imprimir_banner</strong></a>(console: Console, cor: str = 'cyan') -&gt; None</dt><dd><span class="code">Imprime&nbsp;o&nbsp;título/banner&nbsp;do&nbsp;jogo&nbsp;em&nbsp;um&nbsp;painel&nbsp;destacado.<br>
+&nbsp;<br>
+:param&nbsp;console:&nbsp;O&nbsp;console&nbsp;rich&nbsp;usado&nbsp;para&nbsp;imprimir.<br>
+:param&nbsp;cor:&nbsp;Cor&nbsp;principal&nbsp;do&nbsp;banner.</span></dd></dl>
+ <dl><dt><a name="-imprimir_menu"><strong>imprimir_menu</strong></a>(console: Console, nome: str, cor: str = 'cyan') -&gt; None</dt><dd><span class="code">Desenha&nbsp;o&nbsp;menu&nbsp;principal&nbsp;do&nbsp;jogo.<br>
+&nbsp;<br>
+:param&nbsp;console:&nbsp;O&nbsp;console&nbsp;rich&nbsp;usado&nbsp;para&nbsp;imprimir.<br>
+:param&nbsp;nome:&nbsp;Nome&nbsp;do(a)&nbsp;jogador(a),&nbsp;exibido&nbsp;na&nbsp;saudação.<br>
+:param&nbsp;cor:&nbsp;Cor&nbsp;principal&nbsp;usada&nbsp;na&nbsp;borda&nbsp;do&nbsp;menu.</span></dd></dl>
+ <dl><dt><a name="-tela_derrota"><strong>tela_derrota</strong></a>(console: Console, jogador: dict, cor: str = 'red') -&gt; None</dt><dd><span class="code">Mostra&nbsp;a&nbsp;tela&nbsp;de&nbsp;derrota&nbsp;(limite&nbsp;de&nbsp;movimentos&nbsp;esgotado).<br>
+&nbsp;<br>
+:param&nbsp;console:&nbsp;O&nbsp;console&nbsp;rich&nbsp;usado&nbsp;para&nbsp;imprimir.<br>
+:param&nbsp;jogador:&nbsp;O&nbsp;estado&nbsp;final&nbsp;do&nbsp;jogador.<br>
+:param&nbsp;cor:&nbsp;Cor&nbsp;principal&nbsp;da&nbsp;tela.</span></dd></dl>
+ <dl><dt><a name="-tela_vitoria"><strong>tela_vitoria</strong></a>(console: Console, jogador: dict, cor: str = 'green') -&gt; None</dt><dd><span class="code">Mostra&nbsp;a&nbsp;tela&nbsp;de&nbsp;vitória&nbsp;com&nbsp;a&nbsp;pontuação&nbsp;final&nbsp;e&nbsp;uma&nbsp;animação.<br>
+&nbsp;<br>
+:param&nbsp;console:&nbsp;O&nbsp;console&nbsp;rich&nbsp;usado&nbsp;para&nbsp;imprimir.<br>
+:param&nbsp;jogador:&nbsp;O&nbsp;estado&nbsp;final&nbsp;do&nbsp;jogador&nbsp;(nome,&nbsp;pontos,&nbsp;etc.).<br>
+:param&nbsp;cor:&nbsp;Cor&nbsp;principal&nbsp;da&nbsp;tela.</span></dd></dl>
+ <dl><dt><a name="-tocar_som_abertura"><strong>tocar_som_abertura</strong></a>(desligado: bool = False) -&gt; None</dt><dd><span class="code">Toca&nbsp;um&nbsp;pequeno&nbsp;jingle&nbsp;de&nbsp;abertura&nbsp;em&nbsp;uma&nbsp;thread&nbsp;separada&nbsp;(Windows).<br>
+&nbsp;<br>
+Usa&nbsp;o&nbsp;módulo&nbsp;``winsound``&nbsp;da&nbsp;biblioteca&nbsp;padrão.&nbsp;Em&nbsp;outros&nbsp;sistemas,&nbsp;ou<br>
+quando&nbsp;``desligado``&nbsp;é&nbsp;``True``,&nbsp;a&nbsp;função&nbsp;simplesmente&nbsp;não&nbsp;faz&nbsp;nada.<br>
+&nbsp;<br>
+:param&nbsp;desligado:&nbsp;Se&nbsp;``True``,&nbsp;não&nbsp;toca&nbsp;som&nbsp;algum&nbsp;(ver&nbsp;opção<br>
+&nbsp;&nbsp;&nbsp;&nbsp;``--disable-sound``&nbsp;da&nbsp;CLI).</span></dd></dl>
+</td></tr></table>
+</body></html>
